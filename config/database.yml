@@ -3,10 +3,16 @@ default: &default
   encoding: unicode
   pool: <%= ENV["RAILS_MAX_THREADS"] || 5 %>
 
-development:
+local_or_docker: &local_or_docker
   <<: *default
+  host: <%= ENV["DOCKER_COMPOSE"] == "true" ? "db" : "localhost" %>
+  username: postgres
+  password:
+
+development:
+  <<: *local_or_docker
   database: cats_development
 
 test:
-  <<: *default
+  <<: *local_or_docker
   database: cats_test
