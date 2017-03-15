@@ -1,5 +1,10 @@
-div class="cat"
-  h2
-    = cat.name
+div class="col-sm-5"
+  div class="card"
+    img class="card-img-top" src=cat.medium_picture_url alt="One cute cat"
     
-  img src=cat.medium_picture_url
+    div class="card-block"
+      h4 class="card-title"
+        = cat.name
+      
+      p class="card-text"
+        = cat.description

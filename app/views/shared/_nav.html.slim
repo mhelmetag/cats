@@ -1,7 +1,4 @@
-nav
-  ul
-    li
-      == link_to 'Cats', cats_path
-      
-    li  
-      == link_to 'New Cat', new_cat_path
+nav class="nav"
+  == link_to 'Cats', cats_path, class: 'nav-link'
+  
+  == link_to 'New Cat', new_cat_path, class: 'nav-link'
