@@ -14,7 +14,7 @@ $ bundle install
 
 Start minio before you start Rails or else you won't be able to save things.
 
-You could install it directly... but docker is easier if you have it... 
+You could install it directly... but docker is easier if you have it...
 
 ```
 $ docker run -p 9000:9000 \
@@ -32,3 +32,8 @@ Nothing special here.
 $ bundle exec rails db:reset
 $ bundle exec rails s
 ```
+
+## Example
+
+Some cute cats served with minio:
+![Example](/github/example.png)
