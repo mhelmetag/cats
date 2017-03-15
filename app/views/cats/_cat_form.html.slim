@@ -1,0 +1,21 @@
+- if @cat.errors.any?
+  div id='errors'
+    h2
+      = pluralize(@cat.errors.count, 'error') + ' '
+      | prohibited this cat from being saved:
+      
+      ul
+        - @cat.errors.full_messages.each do |msg|
+          li
+            = msg
+            
+== form_for @cat, url: cats_path, action: :create, html: { multipart: true } do |f|
+  p
+    == f.label :name
+    == f.text_field :name
+    
+  p
+    == f.label :picture
+    == f.file_field :picture
+    
+  == f.submit

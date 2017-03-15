@@ -1,0 +1,3 @@
+div class="cats"
+  - @cats.each do |cat|
+    = render partial: 'cat', locals: { cat: cat }
